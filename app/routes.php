@@ -11,8 +11,10 @@
 |
 */
 
-Route::resource('tasks','TasksController');
+Route::resource('cart','CartController');
 Route::resource('category','CategoryController');
+
+Route::controller('products', 'ProductController');
 
 Route::get('/', function()
 {

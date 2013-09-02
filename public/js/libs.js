@@ -1,12 +1,14 @@
 define([
 	'jquery',
 	'underscore',
-	'backbone'
-	],function( $, _, Backbone){
+	'backbone',
+	'bootstrap'
+	],function( $, _, Backbone, Bootstrap){
 
 	return {
 		jquery : $,
 		underscore : _ ,
-		backbone : Backbone
+		backbone : Backbone,
+		bootstrap : Bootstrap
 	};
 });

@@ -1,0 +1,12 @@
+<div class="modal-header">
+	<button class="close" data-dismiss="modal" aria-hidden="true"> <i class="icon-remove"></i> </button>
+	<h3 id="my-modal-label"><%= title %></h3>
+</div>
+<div class="modal-body">
+	<div class="span3"><img src="<%= thumb %>" /><br/><br/><div class="badge">Rs. <%= price %></div></div>
+	<div class="span4"><%= description %></div>
+</div>
+<div class="modal-footer">
+	<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	<a class="btn btn-primary pull-right" data-id="<%= id %>" data-price="<%= price %>" data-title="<%= title %>" data-action="addToCart">Add to Cart</a>
+</div>

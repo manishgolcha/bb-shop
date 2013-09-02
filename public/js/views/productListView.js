@@ -21,7 +21,8 @@ define([
 		addOne : function(product) {
 			var that = this,
 				productView = new SingleProductView({ model : product });
-				that.$el.append(productView.render().el);
+			
+			that.$el.append(productView.render().el);
 		}
 	});
 

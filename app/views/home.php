@@ -15,8 +15,8 @@
           <div class="span9" id="right-pane"></div>
         </div>
       </div>
-      <script src="http://code.jquery.com/jquery.js"></script>
-      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <div id="my-modal" class="modal hide fade full-modal" role="dialog" aria-hidden="true" aria-labelledby="my-modal-label"></div>
+      <div id="cart-modal" class="modal hide fade full-modal" role="dialog" aria-hidden="true" aria-labelledby="cart-modal-label"></div>
       <script data-main="js/main" src="js/libs/require/require.js"></script>
     </body>
 </html>

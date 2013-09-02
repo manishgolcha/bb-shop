@@ -1,20 +1,16 @@
 define([
 	'libs',
-	'text!templates/singleProduct.html',
-	'views/productDetails',
+	'text!templates/productDetails.html',
 	'vent'
-	],function( Libs, singleProductTemplate, ProductDetailsView, Vent) {
+	],function( Libs, ProductDetailsTemplate, Vent){
 
 	var Backbone = Libs.backbone,
 		_ = Libs.underscore,
 		$ = Libs.jquery;
 
 	return Backbone.View.extend({
-		tagName : 'li',
 
-		className : 'span3',
-
-		template : _.template(singleProductTemplate),
+		template : _.template(ProductDetailsTemplate),
 
 		events : {
 			'click [data-action]' : 'handleAction'
@@ -22,7 +18,7 @@ define([
 
 		render : function() {
 			var that = this;
-			that.$el.html(that.template(this.model.toJSON()));
+			that.$el.html(that.template( that.model.toJSON()));
 			return that;
 		},
 
@@ -32,10 +28,6 @@ define([
 				productId = jEl.attr('data-id');
 
 			switch(jEl.attr('data-action')) {
-				case 'showDetails' : 
-					that.showProductDetails(productId);
-				break;
-
 				case 'addToCart'  :
 					Vent.trigger('shop:addToCart', {
 						productId: productId,
@@ -46,13 +38,6 @@ define([
 				break;
 			}
 		},
-
-		showProductDetails : function(id) {
-			var that = this, 
-				view = new ProductDetailsView({ model: that.model });
-
-			$('#my-modal').html(view.render().el).modal();
-		}
 	});
-	
+
 });
