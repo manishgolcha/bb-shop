@@ -14,7 +14,7 @@ define([
 		initialize : function() {
 			// todo - call parent initialize
 			var that = this;
-			that.collection.on('add',that.addOne,that);
+			that.listenTo(that.collection,'add',that.addOne);
 		},
 
 		render : function() {
@@ -26,7 +26,7 @@ define([
 
 		addOne : function(item) {
 			var that = this,
-				itemView = new CartItemView({ model:item });
+				itemView = new CartItemView({ model: item });
 			that.$el.find('#cart-body').append(itemView.render().el);
 		}
 	});

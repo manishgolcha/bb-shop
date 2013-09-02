@@ -32,11 +32,11 @@ define([
 				productId = jEl.attr('data-id');
 
 			switch(jEl.attr('data-action')) {
-				case 'showDetails' : 
+				case 'showDetails': 
 					that.showProductDetails(productId);
 				break;
 
-				case 'addToCart'  :
+				case 'addToCart':
 					Vent.trigger('shop:addToCart', {
 						productId: productId,
 						title: jEl.attr('data-title'),

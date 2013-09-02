@@ -1,5 +1,8 @@
 <td><%= title %></td>
-<td><%= quantity %></td>
+<td class="quantity-cell"><%= quantity %></td>
 <td><%= price %></td>
 <td><%= price * quantity %></td>
-<th><a href="javascript:void(0)" data-action="removeItem"><i class="icon-remove"></i></th>
+<td>
+	<a href="javascript:void(0)" data-action="showQuantityInput"><i class="icon-edit"></i></a>&nbsp;
+	<a href="javascript:void(0)" data-action="removeItem"><i class="icon-remove"></i></a>
+</td>

@@ -12,17 +12,24 @@ define([
 
 		className : 'thumbnails',
 
+		initialize : function() {
+			var that = this;
+			that.listenTo(that.collection,'sort',that.render);
+		},
+
 		render : function() {
 			var that = this;
+			that.container = document.createDocumentFragment();
 			that.collection.each( that.addOne, that);
+			that.$el.html(that.container);
 			return that;
 		},
 
 		addOne : function(product) {
 			var that = this,
-				productView = new SingleProductView({ model : product });
+				productView = new SingleProductView({ model: product });
 			
-			that.$el.append(productView.render().el);
+			that.container.appendChild(productView.render().el);
 		}
 	});
 

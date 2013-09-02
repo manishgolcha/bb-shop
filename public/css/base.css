@@ -3,7 +3,12 @@ li {
 }
 
 .thumbnails > li {
-	min-height: 425px;
+	height: 425px;
+}
+
+.thumbnails > li div.description {
+	height: 200px;
+	overflow: auto;
 }
 
 body .full-modal {

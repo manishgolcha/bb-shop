@@ -3,7 +3,7 @@ define([
 	'text!templates/singleCategory.html',
 	'collections/product',
 	'views/productListView'
-	],function( Libs, singleCategoryTemplate, ProductCollection, ProductListView){
+	],function ( Libs, singleCategoryTemplate, ProductCollection, ProductListView) {
 
 	var Backbone = Libs.backbone,
 		_ = Libs.underscore,
@@ -29,7 +29,7 @@ define([
 				jEl = $(e.currentTarget);
 
 			switch(jEl.attr('data-action')) {
-				case 'showProducts' :
+				case 'showProducts':
 					that.$el.siblings().removeClass('active');
 					jEl.parent().addClass('active');
 					that.showProducts();
@@ -38,18 +38,18 @@ define([
 		},
 
 		showProducts : function() {
-			var products = new ProductCollection([],{ url: 'index.php/products/product-by-category-id/'+ this.model.get('id') });
+			var products = new ProductCollection([],{ url: 'index.php/products/products-by-category-id/'+ this.model.get('id') });
 
-			// todo - cache results
+			// todo - cache results - memoize
 			products.fetch({
 				success : function(res) {
-					var productListView = new ProductListView({ collection : products });
+					var productListView = new ProductListView({ collection: products });
 					$('#right-pane').html(productListView.render().el);
 				},	
 				error : function() {
 					console.log("Error in singleCategoryView.js");
 				}
-			})
+			});
 		}
 	});
 });

@@ -1,6 +1,8 @@
 <div class="thumbnail">
 	<img src="<%= thumb %>" />
-	<h3><a href="javascript:void(0)" data-action="showDetails" data-id="<%= id %>" ><%= title %></a></h3>
-	<p><%= short_description %></p>
+	<div class="description">
+		<h3><a href="javascript:void(0)" data-action="showDetails" data-id="<%= id %>" ><%= title %></a></h3>
+		<p><%= short_description %></p>
+	</div>
 	<p> <span class="badge">Rs. <%= price %></span> <a class="btn btn-primary pull-right" data-id="<%= id %>" data-price="<%= price %>" data-title="<%= title %>" data-action="addToCart">Add to Cart</a></p>
 </div>

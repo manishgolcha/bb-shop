@@ -28,7 +28,7 @@ define([
 				productId = jEl.attr('data-id');
 
 			switch(jEl.attr('data-action')) {
-				case 'addToCart'  :
+				case 'addToCart':
 					Vent.trigger('shop:addToCart', {
 						productId: productId,
 						title: jEl.attr('data-title'),
@@ -37,7 +37,7 @@ define([
 					});
 				break;
 			}
-		},
+		}
 	});
 
 });

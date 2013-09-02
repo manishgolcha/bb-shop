@@ -59,7 +59,7 @@ define([
 				error : function() {
 					console.log("Error");
 				}
-			})
+			});
 		},
 
 		addToCart : function(data) {
@@ -71,7 +71,7 @@ define([
 				that.cartItems.create(data);
 				$('#cart-modal').modal();
 			} else {
-				itemExists.set('quantity',parseInt(itemExists.get('quantity')) + parseInt(data.quantity));
+				itemExists.set('quantity',parseInt(itemExists.get('quantity')) + parseInt(data.quantity) );
 				
 				Backbone.sync('update',itemExists,{
 					url : 'index.php/cart/'+itemExists.get('id'),
@@ -89,7 +89,7 @@ define([
 			var that = this, 
 				matchedItem = false;
 
-			that.cartItems.each(function(item){
+			that.cartItems.each(function(item) {
 				if(item.get('product_id') == productId) matchedItem = item;
 			});
 			return matchedItem;

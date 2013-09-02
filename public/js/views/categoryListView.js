@@ -10,15 +10,17 @@ define([
 
 		render : function() {
 			var that = this;
+			that.container = document.createDocumentFragment();
 			that.collection.each( that.addOne, that);
+			that.$el.html(that.container);
 			return that;
 		},
 
 		addOne : function(category) {
 			var that = this,
-				categoryView = new SingleCategoryView({ model : category });
+				categoryView = new SingleCategoryView({ model: category });
 
-			that.$el.append(categoryView.render().el);
+			that.container.appendChild(categoryView.render().el);
 		}
 	});
 
